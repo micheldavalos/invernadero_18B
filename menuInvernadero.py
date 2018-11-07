@@ -5,6 +5,7 @@ class MenuInvernadero:
         while True:
             print("1) Agregar Invernadero")
             print("2) Mostrar Invernaderos")
+            print("3) Buscar Invernaderos por Usuario")
             print("0) Salir")
             op = input()
             
@@ -12,6 +13,8 @@ class MenuInvernadero:
                 self.agregar()
             elif op == "2":
                 self.mostrar()
+            elif op == "3":
+                self.buscar()
             elif op == "0":
                 break
                 
@@ -25,4 +28,9 @@ class MenuInvernadero:
         resultados = self.inv.recuperar()
         for r in resultados:
             print("{0:3} {1:10} {2:10} {3:3}".format(r[0], r[1], r[2], r[3]))
+
+    def buscar(self):
+        usuario = input('Usuario: ')
+
+        print(self.inv.buscar(usuario))
             
